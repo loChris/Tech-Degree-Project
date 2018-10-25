@@ -12,16 +12,18 @@ def start_game(high_score, leaderboard):
     print("Get Ready to start guessing. Input your number!")
 
     random_number = int(random.randint(1,10))
-    attempt = 1
+    attempt = 0
 
     while True:
         try:
             guess = int(input("> "))
         except ValueError:
-            print("Invalid input.")
+            print("Invalid input. Try an integer(whole-number).")
+            #Don't penalize player with an attempt count just in case a miss-click occurs.
         else:
             if guess == random_number:
                 print("Got it! {} was correct.".format(guess))
+                attempt += 1
                 print("It took you {} attempt(s) to succeed.\n".format(attempt))
                 while True:
                     new_game = input("Would you like to start a new game? Yes/No  ")
