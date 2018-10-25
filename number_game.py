@@ -48,4 +48,5 @@ def start_game(high_score, leaderboard):
                 else:
                     print("Oops! Try again. It's lower than {}.".format(guess))
                     attempt += 1
-start_game(high_score, leaderboard)
+if __name__ == '__main__':
+    start_game(high_score, leaderboard)
