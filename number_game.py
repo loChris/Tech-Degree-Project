@@ -36,13 +36,15 @@ def start_game(high_score, leaderboard):
                         print("Invalid input")
             elif guess < random_number:
                 if guess < 1:
-                    print("You're outside of the number range; Too low.")
+                    print("You're outside of the number range; Too low. Remember: 1 - 10!")
+                    attempt += 1
                 else:
                     print("Oops! Try Again. It's higher than {}.".format(guess))
                     attempt += 1
             elif guess > random_number:
                 if guess > 10:
-                    print("Try again. You're outside of the number range; Too high.")
+                    print("Try again. You're outside of the number range; Too high. Remember: 1 - 10")
+                    attempt += 1
                 else:
                     print("Oops! Try again. It's lower than {}.".format(guess))
                     attempt += 1
